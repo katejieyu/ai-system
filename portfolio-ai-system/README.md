@@ -103,6 +103,20 @@ Individual skills:
 
 ---
 
+## Portfolio Drift Protocol
+
+The system's internal logic doesn't drift — what drifts is its knowledge of the portfolio it's evaluating. When the portfolio changes significantly (new case studies, role change, major redesign), run this sequence:
+
+```
+Step 0 — Pre-check: identify what changed, flag stale outputs, re-run only what's affected
+Step 1 — /portfolio-ai-system learn-site [updated pages]
+Step 2 — /portfolio-ai-system content-strategy [portfolio]   (skip if positioning unchanged)
+Step 3 — /portfolio-ai-system consistency-check [changed pages]
+Step 4 — /portfolio-ai-system audit [portfolio]
+```
+
+---
+
 ## End Deliverable
 
 Full audit report including:
