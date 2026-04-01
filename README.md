@@ -30,18 +30,30 @@ ai-systems/
   product-ai-system/
     README.md
     product-ai-system.md
+    VERSION.md
+    system-orchestrator.md
+    system-memory.md
+    exit-criteria.md
     skills/
       self-inquiry-skill.md
       self-hypothesis-skill.md
       self-test-loop-skill.md
       gap-detection-skill.md
       self-healing-execution-skill.md
+      self-study-skill.md
+      execution-readiness-skill.md
+      learning-capture-skill.md
       persona-journey-refresh-skill.md
       readme-sync-skill.md
     workflows/
       product-full-cycle-workflow.md
       product-self-evolution-workflow.md
       feature-change-loop-workflow.md
+      learning-loop-workflow.md
+
+  archive/
+    product-ai-system-v1/
+    product-ai-system-v2/
 ```
 
 ---
@@ -50,60 +62,63 @@ ai-systems/
 
 ### 1. Product AI System (`/product-ai-system`)
 
-A self-evolving product reasoning engine for designers, PMs, and engineers.
+A self-evolving product development system for designers, PMs, and engineers.
 
-Moves product work from raw problem to execution-ready output through a 9-skill chain. Does not agree with your framing. Surfaces contradictions, flags assumptions, and forces decisions before they become blockers in engineering.
+Moves product work from raw problem to execution-ready output through a 16-phase cycle. Does not agree with your framing. Challenges assumptions, generates competing hypotheses, stress-tests solutions, detects gaps, heals itself, learns from user input, and repeats until all critical gaps are resolved.
 
-Also includes a **self-evolution mode** — the system can turn inward, detect its own drift, regenerate assumptions, and heal gaps without a full audit cycle.
+Also includes a **self-evolution mode** — the system can turn inward, detect its own drift, and fix gaps without a full rebuild.
 
+Also includes a **self-learning mode** — after every run, the system detects what it got wrong, asks the user targeted questions, and converts answers into permanent improvements.
+
+**Current version:** v3.0
 **Skill file:** `product-ai-system/product-ai-system.md`
 **Install:** `cp product-ai-system/product-ai-system.md ~/.claude/commands/product-ai-system.md`
-**Invoke:** `/product-ai-system [problem or idea]`
+**Invoke:** `/product-ai-system run [problem or idea]`
 
-**The 9-Skill Chain (Product Problem Mode):**
-
-| # | Skill | What It Does |
-|---|---|---|
-| 1 | Define Issue | Finds the real problem behind the request |
-| 2 | Diagnose | Identifies root causes at a system level |
-| 3 | Define Goal | Turns the problem into measurable outcomes |
-| 4 | Generate Solution | Creates a grounded V1 solution |
-| 5 | Challenge Solution | Critiques the solution before moving forward |
-| 6 | Refine Solution | Improves it using challenge findings |
-| 7 | Self Study | Reviews the full body of work for patterns |
-| 8 | Self Test | Simulates review from User, PM, Designer, Engineer perspectives |
-| 9 | Execution Readiness | Breaks into epics, tasks, acceptance criteria, and a readiness score |
-
-**Product Problem Mode:**
+**Commands:**
 
 | Command | Use |
 |---|---|
-| `/product-ai-system [problem]` | Full 9-skill cycle |
-| `/product-ai-system fast [problem]` | Compressed 5-skill cycle |
-| `/product-ai-system skill [1-9] [input]` | Single skill in isolation |
-| `/product-ai-system brief [problem]` | Problem brief only (Skills 1–2) |
-| `/product-ai-system prd [problem]` | Full PRD (Skills 1–6) |
-
-**Self-Evolution Mode:**
-
-| Command | Use |
-|---|---|
-| `/product-ai-system evolve` | Run self-evolution loop on the system itself |
+| `/product-ai-system run [problem]` | Full 16-phase cycle — problem to execution plan |
+| `/product-ai-system evolve` | Self-evolution loop — challenge, test, detect, fix |
+| `/product-ai-system learn [feedback]` | Learning loop — convert user input into system improvements |
 | `/product-ai-system feature-update [feature]` | Re-align system after a feature changes |
-| `/product-ai-system refresh-persona` | Update persona and journey definitions |
-| `/product-ai-system sync-readme` | Sync documentation to current system state |
 
-**Self-Evolution Sub-Skills** (`/skills`):
+**The 16-Phase Core Loop:**
+
+| # | Phase | What It Does |
+|---|---|---|
+| 1 | Define Issue | Finds the real problem — separates symptoms from root causes |
+| 2 | Diagnose Problem | Identifies structural causes, workflow gaps, dependencies |
+| 3 | Define Goal | Turns the problem into measurable outcomes with metrics |
+| 4 | Self Inquiry | Challenges framing and assumptions before solution generation |
+| 5 | Self Hypothesis | Generates 3 competing directions, selects primary + fallback |
+| 6 | Generate Solution | Builds a grounded V1 solution from the selected hypothesis |
+| 7 | Challenge Solution | Critiques the solution — weak points, hidden risks, edge cases |
+| 8 | Self Test Loop | Simulates main flow, 5+ edge cases, failure paths |
+| 9 | Gap Detection | Identifies all logic, flow, UX, scope, and ownership gaps |
+| 10 | Self Healing Execution | Fixes all Critical and Moderate gaps directly |
+| 11 | Self Study | Reviews all prior phases as one artifact — detects drift and recurring weaknesses |
+| 12 | Test (4 perspectives) | Simulates review from User, PM, Designer, Engineer — verdict per perspective |
+| 13 | Execution Readiness | Epics, tasks, acceptance criteria, readiness score 0–100 |
+| 14 | Persona & Journey Refresh | Updates persona and journey to reflect latest product state |
+| 15 | README Sync | Updates documentation to reflect current state |
+| 16 | Exit Criteria Check | Determines if cycle is complete or must continue |
+
+**Skills** (`/skills`):
 
 | File | What It Does |
 |---|---|
-| `self-inquiry-skill.md` | Challenge current assumptions before generating anything |
-| `self-hypothesis-skill.md` | Generate testable hypotheses from gaps |
-| `self-test-loop-skill.md` | Simulate usage to find real failure points |
-| `gap-detection-skill.md` | Find missing logic and undefined states |
-| `self-healing-execution-skill.md` | Fix gaps directly — no analysis, only action |
-| `persona-journey-refresh-skill.md` | Update persona and journey after context changes |
-| `readme-sync-skill.md` | Align documentation with current system state |
+| `self-inquiry-skill.md` | Challenges assumptions and framing risks before solution generation |
+| `self-hypothesis-skill.md` | Generates 3 competing hypotheses, compares, selects direction + fallback |
+| `self-test-loop-skill.md` | Simulates main flow, edge cases, failure paths, 3-perspective review |
+| `gap-detection-skill.md` | Identifies logic, flow, UX, scope, and ownership gaps with prioritized register |
+| `self-healing-execution-skill.md` | Applies fixes to Critical/Moderate gaps, produces updated product state |
+| `self-study-skill.md` | Reviews all prior phases as one artifact, finds drift and recurring weaknesses |
+| `execution-readiness-skill.md` | Epics, tasks, acceptance criteria, dependencies, readiness score 0–100 |
+| `learning-capture-skill.md` | Classifies user input, extracts signal, produces exact file changes |
+| `persona-journey-refresh-skill.md` | Refreshes persona and journey with before/after comparison |
+| `readme-sync-skill.md` | Detects stale content, updates changed sections, produces accurate README |
 
 ---
 
@@ -180,7 +195,7 @@ cp portfolio-ai-system/workflows/portfolio-site-scan-workflow.md ~/.claude/comma
 Then invoke in any Claude Code session:
 
 ```
-/product-ai-system [your problem]
+/product-ai-system run [your problem]
 /product-ai-system evolve
 /portfolio-ai-system audit [your portfolio]
 /portfolio-ai-system scan-site [your site]

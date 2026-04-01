@@ -507,29 +507,34 @@
           <div class="card-header">
             <div>
               <div class="card-title">Product AI System</div>
-              <div class="card-subtitle">For designers, PMs, and engineers</div>
+              <div class="card-subtitle">For designers, PMs, and engineers &nbsp;·&nbsp; v3.0 &nbsp;·&nbsp; 16-phase cycle</div>
             </div>
             <span class="card-status">Live</span>
           </div>
 
           <p class="card-desc">
-            Takes a product problem — vague idea, named feature, or draft PRD — and moves it through a structured 9-skill chain to execution-ready output. The system doesn't agree with your framing. It finds the real problem behind your request, challenges the solution before you build it, and breaks everything into tasks with acceptance criteria and a readiness score.
+            Takes a product problem — vague idea, named feature, or draft PRD — and moves it through a 16-phase cycle to execution-ready output. The system doesn't agree with your framing. It challenges assumptions, generates competing hypotheses, stress-tests solutions, detects gaps, heals itself, learns from your input, and repeats until all critical gaps are resolved.
           </p>
           <p class="card-desc" style="margin-top:-12px;">
-            Also has a <strong>self-evolution mode</strong> — when its own assumptions drift, it can turn inward, detect gaps, and fix its own workflow without a full rebuild.
+            Includes a <strong>self-evolution mode</strong> — the system turns inward, detects drift, and fixes its own logic. And a <strong>self-learning mode</strong> — after every run, it asks what it got wrong and converts your answers into permanent improvements.
           </p>
 
           <div class="card-pills">
             <span class="card-pill">Define Issue</span>
             <span class="card-pill">Diagnose</span>
             <span class="card-pill">Define Goal</span>
+            <span class="card-pill">Self Inquiry</span>
+            <span class="card-pill">Hypothesis</span>
             <span class="card-pill">Generate Solution</span>
             <span class="card-pill">Challenge</span>
-            <span class="card-pill">Refine</span>
-            <span class="card-pill">Self Study</span>
             <span class="card-pill">Self Test</span>
+            <span class="card-pill">Gap Detection</span>
+            <span class="card-pill">Self Healing</span>
+            <span class="card-pill">Self Study</span>
+            <span class="card-pill">4-Perspective Test</span>
             <span class="card-pill">Execution Readiness</span>
-            <span class="card-pill card-pill--evo">✦ Self-Evolution Mode</span>
+            <span class="card-pill card-pill--evo">✦ Self-Evolution</span>
+            <span class="card-pill card-pill--evo">✦ Self-Learning</span>
           </div>
         </div>
 
@@ -540,40 +545,20 @@
           </button>
           <div class="commands-list">
             <div class="command-row">
-              <span class="command-cmd">/product-ai-system [problem]</span>
-              <span class="command-desc">Full 9-skill cycle — raw problem to execution plan</span>
-            </div>
-            <div class="command-row">
-              <span class="command-cmd">/product-ai-system fast [problem]</span>
-              <span class="command-desc">Compressed 5-skill pass — faster, less depth</span>
-            </div>
-            <div class="command-row">
-              <span class="command-cmd">/product-ai-system brief [problem]</span>
-              <span class="command-desc">Problem definition only (Skills 1–2)</span>
-            </div>
-            <div class="command-row">
-              <span class="command-cmd">/product-ai-system prd [problem]</span>
-              <span class="command-desc">Full PRD output (Skills 1–6)</span>
-            </div>
-            <div class="command-row">
-              <span class="command-cmd">/product-ai-system skill [1-9] [input]</span>
-              <span class="command-desc">Run a single skill in isolation</span>
+              <span class="command-cmd">/product-ai-system run [problem]</span>
+              <span class="command-desc">Full 16-phase cycle — raw problem to execution plan</span>
             </div>
             <div class="command-row" style="background:var(--purple-bg);">
               <span class="command-cmd" style="color:var(--purple);">/product-ai-system evolve</span>
-              <span class="command-desc">Self-evolution loop — detect drift, fix gaps, re-test</span>
+              <span class="command-desc">Self-evolution loop — challenge, test, detect gaps, fix</span>
+            </div>
+            <div class="command-row" style="background:var(--purple-bg);">
+              <span class="command-cmd" style="color:var(--purple);">/product-ai-system learn [feedback]</span>
+              <span class="command-desc">Learning loop — convert user input into permanent system improvements</span>
             </div>
             <div class="command-row" style="background:var(--purple-bg);">
               <span class="command-cmd" style="color:var(--purple);">/product-ai-system feature-update [feature]</span>
-              <span class="command-desc">Re-align system after a feature changes</span>
-            </div>
-            <div class="command-row" style="background:var(--purple-bg);">
-              <span class="command-cmd" style="color:var(--purple);">/product-ai-system refresh-persona</span>
-              <span class="command-desc">Update persona and journey definitions</span>
-            </div>
-            <div class="command-row" style="background:var(--purple-bg);">
-              <span class="command-cmd" style="color:var(--purple);">/product-ai-system sync-readme</span>
-              <span class="command-desc">Sync documentation to current system state</span>
+              <span class="command-desc">Re-align system after a feature changes scope or flow</span>
             </div>
           </div>
         </div>
